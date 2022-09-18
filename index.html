@@ -10,15 +10,22 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
-<body class="bg-light" >
+<body class="bg-dark" >
     <!-- Navbar -->
-    
+    <nav class="navbar bg-white ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logoUdG.jpeg" alt="Logo" height="100px"  class="d-inline-block align-text-center">
+          <img src="/img/logo_GM.png" alt="Logo" height="90px"  class="d-inline-block align-text-center">
+        </a>
+      </div>
+    </nav>
     <!-- Sorteo -->
     <div class="container-lg">
-      <h1 class="display-1 my-5 ">Sorteo</h1>
+      <h1 class="display-1 my-5 text-white ">Sorteo</h1>
       <div class="row justify-content-sm-center justify-content-sm-left m-0 p-0">
         <div class="col-sm-12 col-md-8">
-          <table class="table bg-black table table-info table-striped"  >
+          <table class="table table table-info table-striped table-light"  >
             <thead>
               <tr>
                 <th scope="col">Universidad</th>
@@ -26,15 +33,12 @@
               </tr>
             </thead>
             <tbody id="tabla-sorteo">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-              </tr>
+              <!-- Filas se agregarán aquí en automático -->
             </tbody>
           </table>
         </div>
         <div class="col-sm-12 col-md-4 p-1  d-flex justify-content-center align-items-center">
-            <button class="btn btn-primary btn-lg ">Sorteo de turnos</button>
+            <button class="btn btn-primary btn-lg " onclick="gmHandler.sorteo();" id="boton_sorteo">Comenzar sorteo</button>
         </div>
       </div>
       
