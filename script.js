@@ -26,11 +26,9 @@ class handler {
                             'Universidad Tecnológica de la Zona Metropolitana de Guadalajara',
                             'Instituto Tecnológico José Mario Molina Pasquel y Henríquez.'];
         this.bloques = [];
-        for (let index = 1; index < this.instituciones.length + 1; index++) {
-            this.bloques.push(new bloque(index));
-        }
     }
 
+    // Dado un array, revuelve sus contenidos
     revolver(array) {
         let indice_actual = array.length,  indice_aleatorio;
         while (indice_actual != 0) {
@@ -47,12 +45,21 @@ class handler {
         return array;
     }
 
+    // Revuelve instituciones y bloques para repartir
     iniciarRifa() {
         this.instituciones = this.revolver(this.instituciones)
         this.bloques = this.revolver(this.bloques);
         for (let i = 0; i < this.instituciones.length; i++) {
             console.log("Institución: " + this.instituciones[i]);
-            console.log("Sacó: " + this.bloques[i].getId())
+            console.log("Sacó: " + this.bloques[i].getID())
+        }
+    }
+
+    // Si las diapositivas se guardan como "imgk.PNG" para k=1,2,... esta función crea bloque
+    // para cada k con su imagen respectiva en PNG
+    crearBloques() {
+        for (let index = 1; index < this.instituciones.length + 1; index++) {
+            this.bloques.push(new bloque(index, "img" + index + ".PNG"));
         }
     }
 
