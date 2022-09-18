@@ -1,3 +1,16 @@
+// Al cargar página web
+let gmHandler = new handler();
+gmHandler.crearBloques();
+
+
+
+
+function crearFila(institucion, bloque, rutaImg) {
+    let tablaSorteo = document.getElementById("tabla-sorteo");
+    var target = document.getElementById("ID");
+
+}
+
 
 // Un bloque define a un conjunto de cosas a rifar
 class bloque {
@@ -62,6 +75,7 @@ class handler {
             this.bloques.push(new bloque(index, "img" + index + ".PNG"));
         }
     }
-
-    
 }
+
+
+
