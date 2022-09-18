@@ -1,38 +1,48 @@
 
-
+// Un bloque define a un conjunto de cosas a rifar
 class bloque {
-    constructor(id){
-        this.paisesComites = []
-        this.identificadorBloque = id;
+    constructor(id, nombre_imagen){
+        this.id = id;
+        this.img = nombre_imagen;
+        this.paisesComites = []; // Opcional: puede quedar vacío
     }
-    getId (){
-        return this.identificadorBloque
+    getID (){
+        return this.id
     }
+
 }
 
+// handler a cargo de la lógica
 class handler {
-    constructor(){
-        this.instituciones = ['','b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    constructor() {
+        this.instituciones = ['Universidad de Guadalajara (UdeG)',
+                            'Instituto Tecnológico y de Estudios Superiores de Monterrey campus Guadalajara (TEC)', 
+                            'Instituto de Educación Superior de Occidente (ITESO)', 
+                            'Universidad Autónoma de Guadalajara (UAG)', 
+                            'Universidad del Valle de Atemajac (UNIVA)', 
+                            'Universidad Panamericana (UP)', 
+                            'Universidad Politécnica de la Zona Metropolitana de Guadalajara', 
+                            'Universidad Tecnológica de Jalisco',
+                            'Universidad Tecnológica de la Zona Metropolitana de Guadalajara',
+                            'Instituto Tecnológico José Mario Molina Pasquel y Henríquez.'];
         this.bloques = [];
         for (let index = 1; index < this.instituciones.length + 1; index++) {
             this.bloques.push(new bloque(index));
         }
     }
 
-
-
     revolver(array) {
-        let currentIndex = array.length,  randomIndex;
-        // While there remain elements to shuffle.
-        while (currentIndex != 0) {
-            // Pick a remaining element.
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
+        let indice_actual = array.length,  indice_aleatorio;
+        while (indice_actual != 0) {
+            // Elegir un elemento
+            indice_aleatorio = Math.floor(Math.random() * indice_actual);
+            indice_actual--;
 
-            // And swap it with the current element.
-            [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-            }
+            // E intercambiarlo por el actual
+            [array[indice_actual], array[indice_aleatorio]] = [
+                array[indice_aleatorio], array[indice_actual]
+            ];
+        }
 
         return array;
     }
